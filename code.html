@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Padres Con Poder | Empowering Lives, Navigating Futures</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#004299",
+                        "secondary-container": "#76fcb0",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e2e2e5",
+                        "outline": "#737783",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e2e2e5",
+                        "on-tertiary-fixed": "#2e1500",
+                        "primary-container": "#3e6dc8",
+                        "surface-dim": "#dadadc",
+                        "on-secondary-fixed-variant": "#00522f",
+                        "on-tertiary-fixed-variant": "#6c3a00",
+                        "on-secondary-fixed": "#002110",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdcc1",
+                        "surface-container-high": "#e8e8ea",
+                        "secondary": "#006d40",
+                        "on-secondary-container": "#007445",
+                        "primary": "#1e54ae",
+                        "surface-container-low": "#f3f3f6",
+                        "secondary-fixed": "#76fcb0",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#afc6ff",
+                        "surface-tint": "#285bb5",
+                        "on-primary-fixed": "#001944",
+                        "on-primary-container": "#f3f4ff",
+                        "secondary-fixed-dim": "#57de96",
+                        "background": "#ffffff",
+                        "surface-container": "#eeeef0",
+                        "tertiary-fixed-dim": "#ffb779",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c3c6d4",
+                        "inverse-on-surface": "#f0f0f3",
+                        "tertiary": "#854800",
+                        "primary-fixed": "#d9e2ff",
+                        "surface-bright": "#f9f9fc",
+                        "inverse-surface": "#2f3133",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#434752",
+                        "on-tertiary-container": "#fff3eb",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f9f9fc",
+                        "tertiary-container": "#a85d00",
+                        "inverse-primary": "#afc6ff",
+                        "on-background": "#1a1c1e",
+                        "on-surface": "#1a1c1e",
+                        "on-error": "#ffffff"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "section-padding-desktop": "160px",
+                        "base": "8px",
+                        "section-padding-mobile": "80px",
+                        "grid-gutter": "24px",
+                        "container-max-width": "1280px"
+                    },
+                    fontFamily: {
+                        "headline-sm": ["Playfair Display", "serif"],
+                        "headline-md": ["Playfair Display", "serif"],
+                        "headline-lg-mobile": ["Playfair Display", "serif"],
+                        "label-lg": ["Hanken Grotesk", "sans-serif"],
+                        "body-lg": ["Hanken Grotesk", "sans-serif"],
+                        "display-lg": ["Playfair Display", "serif"],
+                        "headline-lg": ["Playfair Display", "serif"],
+                        "body-md": ["Hanken Grotesk", "sans-serif"]
+                    },
+                    fontSize: {
+                        "headline-sm": ["28px", { lineHeight: "36px", fontWeight: "600" }],
+                        "headline-md": ["40px", { lineHeight: "48px", fontWeight: "600", letterSpacing: "-0.01em" }],
+                        "headline-lg-mobile": ["48px", { lineHeight: "56px", fontWeight: "700", letterSpacing: "-0.01em" }],
+                        "label-lg": ["15px", { lineHeight: "24px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "body-lg": ["20px", { lineHeight: "32px", fontWeight: "400" }],
+                        "display-lg": ["72px", { lineHeight: "80px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "body-md": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+                    },
+                    boxShadow: {
+                        'ambient-sm': '0 4px 20px -2px rgba(30, 84, 174, 0.04)',
+                        'ambient': '0 12px 40px -4px rgba(30, 84, 174, 0.08)',
+                        'ambient-lg': '0 24px 60px -8px rgba(30, 84, 174, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle organic background blobs */
+        .bg-blob-1 {
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(175, 198, 255, 0.15) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(60px);
+            will-change: transform;
+        }
+        .bg-blob-2 {
+            position: absolute;
+            bottom: 10%;
+            left: -10%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(118, 252, 176, 0.1) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(60px);
+            will-change: transform;
+        }
+        
+        .clip-path-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .organic-shape-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1440 320' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23f9f9fc' fill-opacity='1' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,144C672,139,768,181,864,197.3C960,213,1056,203,1152,186.7C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Reveal Animations */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.33, 1, 0.68, 1), transform 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-element.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Animation for Blobs */
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        .animate-float {
+            animation: float 20s ease-in-out infinite;
+        }
+        .animate-float-reverse {
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        /* Parallax */
+        .parallax-bg {
+            will-change: transform;
+            transform: scale(1.1); /* Prevent edges from showing */
+        }
+
+        /* Reduced Motion Fallback */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-element {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .animate-float, .animate-float-reverse {
+                animation: none;
+            }
+            .parallax-bg {
+                transform: none !important;
+            }
+            .group:hover img {
+                transform: none !important;
+            }
+            .hover\:-translate-y-1:hover, .hover\:-translate-y-2:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden relative">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-[100] bg-surface-container-lowest/95 backdrop-blur-xl border-b border-outline-variant/10 transition-all duration-300">
+<div class="flex justify-between items-center h-24 px-6 md:px-12 max-w-[1440px] mx-auto">
+<!-- Brand -->
+<a class="flex items-center gap-3 scale-95 active:scale-90 transition-transform" href="#">
+<img alt="Padres Con Poder Logo" class="h-14 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJIK7tVhqA4Kid_uw5gJ1v70b3nwGO78Ox-pL8G2WI8XaKmgczX4z2YtW9uvL5aEba1yzM_MNHT4UqMTDM1C9AETgMYw_tkOFCALu9ZxuaBXyArnhewwwGxfoIogPc0acKYyDypLLOjyUL6CRwyuyIbxBsU1GL23AOlOKdnseL1WL6XIpd5ezyMf1ZLNmUZeuL-47JL1gvfZE-PM7HO-lI6kUQN0lpMmPutIT8EhTrGcLkA69vbDdWY4crgPxx8l_Hcv79VPgLohc"/>
+<span class="text-body-lg font-display-lg font-bold text-primary dark:text-primary-fixed-dim tracking-tight hidden sm:block">Padres Con Poder</span>
+</a>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors text-label-lg font-label-lg uppercase tracking-widest hover:opacity-90 duration-300" href="#">Families</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors text-label-lg font-label-lg uppercase tracking-widest hover:opacity-90 duration-300" href="#">Businesses</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors text-label-lg font-label-lg uppercase tracking-widest hover:opacity-90 duration-300" href="#">Impact</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors text-label-lg font-label-lg uppercase tracking-widest hover:opacity-90 duration-300" href="#">About</a>
+</div>
+<!-- CTA & Mobile Toggle -->
+<div class="flex items-center gap-6">
+<a class="hidden lg:inline-flex items-center justify-center px-8 py-3.5 bg-primary text-on-primary rounded-full text-label-lg font-label-lg uppercase tracking-wider hover:bg-primary/90 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 shadow-ambient" href="#">
+                    Get Started
+                </a>
+<button aria-label="Menu" class="md:hidden p-2 text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 w-full h-full">
+<img alt="Community connection" class="w-full h-full object-cover object-center parallax-bg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7FyQbiD5fma5_qg2gTee5sQkKs0WqICzApBrJ1tCi7gFGsm3IbCx2zNKv24n96EWCGg0ah2OZ2v_Ub1nYikth5idMzkArdj8tHBkb8A8UwNt9CjHNXBZZdXz8PvhGihq_frMwBF9HAi6IpIJuixyj5GKgAmyc6x7x3gc4yqvotwsCcGmmswsc4Xb2lecw3eyVvuUA6BKgJVM822dg84yHMN0O-o45CaTW6O59LF6ynsbP7P5SzsJCxe7QJLb4p9sbBAllCD45QGs"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/95 via-surface-container-lowest/80 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 py-24 flex flex-col lg:flex-row items-center">
+<div class="lg:w-3/5 flex flex-col gap-10">
+<div class="reveal-element inline-flex items-center gap-3 px-5 py-2.5 bg-secondary/10 rounded-full w-fit border border-secondary/20 backdrop-blur-sm">
+<span class="material-symbols-outlined text-secondary text-base">stars</span>
+<span class="text-secondary text-label-lg font-label-lg uppercase tracking-widest">Consulting &amp; Support</span>
+</div>
+<h1 class="reveal-element text-headline-lg-mobile md:text-display-lg font-headline-lg-mobile md:font-display-lg text-on-surface leading-tight" style="transition-delay: 100ms;">
+                        Empowering Lives,<br/>
+<span class="text-primary italic">Navigating Futures.</span>
+</h1>
+<p class="reveal-element text-body-lg font-body-lg text-on-surface-variant max-w-xl text-xl md:text-2xl leading-relaxed" style="transition-delay: 200ms;">
+                        Comprehensive support for families and businesses to create an inclusive, neurodiverse world. Strategy meets profound compassion.
+                    </p>
+<div class="reveal-element flex flex-col sm:flex-row gap-6 mt-6" style="transition-delay: 300ms;">
+<a class="inline-flex items-center justify-center px-10 py-5 bg-primary text-on-primary rounded-full text-label-lg font-label-lg uppercase tracking-wider hover:bg-primary/90 hover:-translate-y-1 active:scale-95 transition-all duration-300 shadow-ambient-lg group" href="#">
+                            Support for Families
+                            <span class="material-symbols-outlined ml-3 group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center px-10 py-5 bg-surface-container-lowest text-primary border border-outline-variant/30 rounded-full text-label-lg font-label-lg uppercase tracking-wider hover:bg-surface-container-low hover:-translate-y-1 active:scale-95 transition-all duration-300 shadow-sm" href="#">
+                            Consulting for Businesses
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Bento Section -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop px-6 md:px-12 bg-surface-container-low relative overflow-hidden">
+<div class="bg-blob-1 animate-float pointer-events-none opacity-50"></div>
+<div class="max-w-[1280px] mx-auto relative z-10">
+<div class="reveal-element mb-20 text-center max-w-3xl mx-auto">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-6">Driving Real Change</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant text-xl">Measurable outcomes driving structural change for families and inclusive growth for forward-thinking organizations.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+<!-- Stat Card 1 -->
+<div class="reveal-element bg-surface-container-lowest rounded-3xl p-12 shadow-ambient hover:shadow-ambient-lg transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center relative overflow-hidden group" style="transition-delay: 100ms;">
+<div class="absolute top-0 left-0 w-full h-2 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+<div class="w-20 h-20 rounded-2xl bg-primary/5 flex items-center justify-center mb-8 text-primary group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl">family_restroom</span>
+</div>
+<h3 class="text-display-lg font-display-lg text-on-surface mb-4">500+</h3>
+<p class="text-label-lg font-label-lg text-on-surface-variant uppercase tracking-widest">Families Supported</p>
+</div>
+<!-- Stat Card 2 -->
+<div class="reveal-element bg-surface-container-lowest rounded-3xl p-12 shadow-ambient hover:shadow-ambient-lg transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center relative overflow-hidden group" style="transition-delay: 200ms;">
+<div class="absolute top-0 left-0 w-full h-2 bg-secondary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+<div class="w-20 h-20 rounded-2xl bg-secondary/5 flex items-center justify-center mb-8 text-secondary group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl">corporate_fare</span>
+</div>
+<h3 class="text-display-lg font-display-lg text-on-surface mb-4">100+</h3>
+<p class="text-label-lg font-label-lg text-on-surface-variant uppercase tracking-widest">Businesses Transformed</p>
+</div>
+<!-- Stat Card 3 -->
+<div class="reveal-element bg-surface-container-lowest rounded-3xl p-12 shadow-ambient hover:shadow-ambient-lg transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center relative overflow-hidden group" style="transition-delay: 300ms;">
+<div class="absolute top-0 left-0 w-full h-2 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+<div class="w-20 h-20 rounded-2xl bg-primary/5 flex items-center justify-center mb-8 text-primary group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl">monitoring</span>
+</div>
+<h3 class="text-display-lg font-display-lg text-on-surface mb-4">$10M+</h3>
+<p class="text-label-lg font-label-lg text-on-surface-variant uppercase tracking-widest">Services Navigated</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services for Families -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop px-6 md:px-12 bg-surface-container-lowest">
+<div class="max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+<div class="reveal-element order-2 lg:order-1 lg:col-span-7 relative h-[600px] rounded-[2rem] overflow-hidden shadow-ambient-lg group hover:-translate-y-2 transition-all duration-500">
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply z-10 transition-opacity group-hover:opacity-0 duration-700"></div>
+<img alt="Family Services" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD24yvRmBYiVgXSJFdXsRd2d1XafjjVqB3QEBZcvgS_zkbwUr4UOO_14LBnlSfkCEJ6LfENqtxyCp91KFDtiOxt9mi-3DoI-73za6HyhBkSpqh9z-aLHBYQPSTuP2X16dqmEwM9A-J6IFDpGj0UMu8GJ4tRDV8si_qV-dO-FyvIws_qvHxKS9FQXGUIEknjE4CEhGj5OHV8e2WP25kP9u6G5FJ8sPACtoJtwcjkW1fDh59kZXkmTavETDm35b1wVshonJoPn5FI7U0"/>
+</div>
+<div class="reveal-element order-1 lg:order-2 lg:col-span-5 flex flex-col gap-10" style="transition-delay: 200ms;">
+<div>
+<div class="inline-flex items-center gap-2 mb-6">
+<div class="w-8 h-[1px] bg-primary"></div>
+<span class="text-primary text-label-lg font-label-lg uppercase tracking-widest">For Families</span>
+</div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-6 leading-tight">Navigating the System with Confidence</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant text-xl leading-relaxed">We provide structured, empathetic guidance through complex support systems, ensuring your family accesses the resources needed for a thriving, independent future.</p>
+</div>
+<div class="space-y-8">
+<div class="flex gap-6 group">
+<div class="mt-1 flex-shrink-0 w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300 group-hover:scale-110">
+<span class="material-symbols-outlined">check</span>
+</div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface mb-2">Self-Determination Program (SDP)</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Expert facilitation to maximize your SDP budget and tailor services to your unique needs.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="mt-1 flex-shrink-0 w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300 group-hover:scale-110">
+<span class="material-symbols-outlined">check</span>
+</div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface mb-2">Regional Center Navigation</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Fierce advocacy and strategic planning for all Regional Center interactions.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="mt-1 flex-shrink-0 w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300 group-hover:scale-110">
+<span class="material-symbols-outlined">check</span>
+</div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface mb-2">Independent Living Support</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Developing actionable, realistic pathways for young adults transitioning to true independence.</p>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center text-primary text-label-lg font-label-lg uppercase tracking-widest hover:text-primary-fixed-dim transition-colors w-fit mt-4 group" href="#">
+                            Explore Family Services
+                            <span class="material-symbols-outlined ml-3 group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Services for Businesses -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop px-6 md:px-12 bg-surface-container-low relative overflow-hidden">
+<div class="bg-blob-2 animate-float-reverse pointer-events-none opacity-50"></div>
+<div class="max-w-[1440px] mx-auto relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+<div class="reveal-element lg:col-span-5 flex flex-col gap-10">
+<div>
+<div class="inline-flex items-center gap-2 mb-6">
+<div class="w-8 h-[1px] bg-secondary"></div>
+<span class="text-secondary text-label-lg font-label-lg uppercase tracking-widest">For Businesses</span>
+</div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-6 leading-tight">Building Truly Inclusive Workplaces</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant text-xl leading-relaxed">Transform your organizational culture with high-level neurodiversity consulting that drives innovation, ensures compliance, and fosters genuine inclusion.</p>
+</div>
+<div class="space-y-6">
+<div class="p-8 bg-surface-container-lowest border border-outline-variant/10 rounded-2xl hover:shadow-ambient transition-all duration-300 group hover:-translate-y-1">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">diversity_3</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Neurodiversity Consulting</h4>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant pl-16">Strategic audits and policy development for inclusive hiring and retention practices.</p>
+</div>
+<div class="p-8 bg-surface-container-lowest border border-outline-variant/10 rounded-2xl hover:shadow-ambient transition-all duration-300 group hover:-translate-y-1">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">model_training</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Inclusive Training</h4>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant pl-16">Immersive corporate workshops designed to educate teams and foster a supportive environment.</p>
+</div>
+<div class="p-8 bg-surface-container-lowest border border-outline-variant/10 rounded-2xl hover:shadow-ambient transition-all duration-300 group hover:-translate-y-1">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">strategy</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">D&amp;I Strategy Integration</h4>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant pl-16">Seamlessly aligning neurodiversity initiatives with your broader corporate diversity goals.</p>
+</div>
+</div>
+<a class="inline-flex items-center text-secondary text-label-lg font-label-lg uppercase tracking-widest hover:text-secondary-fixed-dim transition-colors w-fit mt-4 group" href="#">
+                            Explore Business Consulting
+                            <span class="material-symbols-outlined ml-3 group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="reveal-element lg:col-span-7 relative h-[700px] rounded-[2rem] overflow-hidden shadow-ambient-lg group hover:-translate-y-2 transition-all duration-500" style="transition-delay: 200ms;">
+<div class="absolute inset-0 bg-secondary/10 mix-blend-multiply z-10 transition-opacity group-hover:opacity-0 duration-700"></div>
+<img alt="Business Services" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCTBKaa296I7qBB6JOg1p97O93LEOX_0nJp21N5B2UYgMigZnAOwgnCBnTo4gS2cNOe2RKBcEY9t2GgiUnl1c0lZ5ggr3PDNzNCXt5yergnfvcJilvO4pWcgMjoQm0e7ILYKPvnXeNE1-dXVUIGM8tWiGGLHkDMaSBWPiceJT4C6KYaTEVGYynA2Y_qBWzOyh2UeDX-R44nuf2ejHJNPgolesS3S1q3kLH-BQxFnYjmCjtjimaxSzvfeuG63zEwb4_bMswf2TOHmw"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 md:py-32 px-6 md:px-12 bg-inverse-surface text-inverse-on-surface relative overflow-hidden">
+<div class="absolute inset-0 opacity-5">
+<div class="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary rounded-full blur-[100px]"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 max-w-[1280px] mx-auto relative z-10">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1 flex flex-col gap-6">
+<img alt="Padres Con Poder Logo" class="h-16 w-auto object-contain object-left grayscale brightness-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJIK7tVhqA4Kid_uw5gJ1v70b3nwGO78Ox-pL8G2WI8XaKmgczX4z2YtW9uvL5aEba1yzM_MNHT4UqMTDM1C9AETgMYw_tkOFCALu9ZxuaBXyArnhewwwGxfoIogPc0acKYyDypLLOjyUL6CRwyuyIbxBsU1GL23AOlOKdnseL1WL6XIpd5ezyMf1ZLNmUZeuL-47JL1gvfZE-PM7HO-lI6kUQN0lpMmPutIT8EhTrGcLkA69vbDdWY4crgPxx8l_Hcv79VPgLohc"/>
+<p class="text-body-lg font-body-lg text-surface-variant/80 mt-2">
+                    Bridging the gap between families and structural support with expertise and empathy.
+                </p>
+</div>
+<!-- Links Column 1 -->
+<div class="col-span-1 flex flex-col gap-4">
+<h4 class="text-label-lg font-label-lg uppercase tracking-widest text-surface-variant/50 mb-4">Services</h4>
+<a class="text-body-lg font-body-lg text-surface-variant hover:text-primary-fixed-dim transition-colors w-fit" href="#">Family Support</a>
+<a class="text-body-lg font-body-lg text-surface-variant hover:text-primary-fixed-dim transition-colors w-fit" href="#">Business Consulting</a>
+<a class="text-body-lg font-body-lg text-surface-variant hover:text-primary-fixed-dim transition-colors w-fit" href="#">Impact Reports</a>
+</div>
+<!-- Links Column 2 -->
+<div class="col-span-1 flex flex-col gap-4">
+<h4 class="text-label-lg font-label-lg uppercase tracking-widest text-surface-variant/50 mb-4">Company</h4>
+<a class="text-body-lg font-body-lg text-surface-variant hover:text-primary-fixed-dim transition-colors w-fit" href="#">Success Stories</a>
+<a class="text-body-lg font-body-lg text-surface-variant hover:text-primary-fixed-dim transition-colors w-fit" href="#">Privacy Policy</a>
+<a class="text-body-lg font-body-lg text-surface-variant hover:text-primary-fixed-dim transition-colors w-fit" href="#">Contact Us</a>
+</div>
+<!-- Copyright Column -->
+<div class="col-span-1 md:col-span-4 mt-16 pt-12 border-t border-surface-variant/10">
+<p class="text-body-md font-body-md text-surface-variant/60 text-center md:text-left">
+                    © 2024 Padres Con Poder. Empowering families and businesses through inclusive strategy.
+                </p>
+</div>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check for reduced motion
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!prefersReducedMotion) {
+                // Intersection Observer for Reveal Elements
+                const revealElements = document.querySelectorAll('.reveal-element');
+                const revealOptions = {
+                    threshold: 0.15,
+                    rootMargin: "0px 0px -50px 0px"
+                };
+
+                const revealObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, revealOptions);
+
+                revealElements.forEach(el => revealObserver.observe(el));
+
+                // Subtle Parallax Effect for Hero Image
+                const parallaxBg = document.querySelector('.parallax-bg');
+                if (parallaxBg) {
+                    let lastKnownScrollPosition = 0;
+                    let ticking = false;
+
+                    window.addEventListener('scroll', () => {
+                        lastKnownScrollPosition = window.scrollY;
+
+                        if (!ticking) {
+                            window.requestAnimationFrame(() => {
+                                // Subtle downward translation based on scroll
+                                // Multiplier controls the strength of the parallax
+                                parallaxBg.style.transform = `translateY(${lastKnownScrollPosition * 0.3}px) scale(1.1)`;
+                                ticking = false;
+                            });
+                            ticking = true;
+                        }
+                    }, { passive: true });
+                }
+            } else {
+                // Instantly reveal elements if reduced motion is preferred
+                document.querySelectorAll('.reveal-element').forEach(el => el.classList.add('active'));
+            }
+        });
+    </script>
+</body></html>
