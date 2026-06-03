@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 
+import { LanguageProvider } from "@/contexts/language-context";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 
@@ -24,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${hankenGrotesk.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-background font-sans text-ink">
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+        <LanguageProvider>
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+        </LanguageProvider>
       </body>
     </html>
   );

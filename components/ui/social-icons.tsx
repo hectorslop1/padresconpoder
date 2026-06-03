@@ -27,3 +27,33 @@ export function InstagramIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+/** Facebook icon wrapped in its official blue gradient container */
+export function FacebookGradientIcon({ className }: { className?: string }) {
+  return (
+    <span
+      className={`inline-flex items-center justify-center rounded-xl ${className ?? ""}`}
+      style={{
+        background:
+          "radial-gradient(circle at 30% 107%, #63c8ff 0%, #1877F2 45%, #0a4fc4 90%)",
+      }}
+    >
+      <FacebookIcon className="size-5 text-white" />
+    </span>
+  );
+}
+
+/** Instagram icon wrapped in its official gradient container */
+export function InstagramGradientIcon({ className }: { className?: string }) {
+  return (
+    <span
+      className={`inline-flex items-center justify-center rounded-xl ${className ?? ""}`}
+      style={{
+        background:
+          "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
+      }}
+    >
+      <InstagramIcon className="size-5 text-white" />
+    </span>
+  );
+}

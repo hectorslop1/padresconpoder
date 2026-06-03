@@ -1,19 +1,23 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 
-import { FacebookIcon, InstagramIcon } from "@/components/ui/social-icons";
-
+import { useLanguage } from "@/contexts/language-context";
+import { FacebookGradientIcon, InstagramGradientIcon } from "@/components/ui/social-icons";
 import { Separator } from "@/components/ui/separator";
 
-const navLinks = [
-  { label: "Families", href: "/families" },
-  { label: "Businesses", href: "/businesses" },
-  { label: "About", href: "/about" },
-  { label: "Get Support", href: "/get-support" },
-];
-
 export function SiteFooter() {
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { label: t.nav.families, href: "/families" },
+    { label: t.nav.businesses, href: "/businesses" },
+    { label: t.nav.about, href: "/about" },
+    { label: t.nav.getSupport, href: "/get-support" },
+  ];
+
   return (
     <footer className="bg-[#111827] text-white">
       <div className="page-shell py-16 md:py-20">
@@ -32,9 +36,7 @@ export function SiteFooter() {
                 Padres Con Poder
               </p>
               <p className="max-w-sm text-[0.94rem] leading-7 text-white/50">
-                Empowering individuals with disabilities, supporting families through the
-                Self-Determination Program, and helping businesses build inclusive workplaces
-                across California.
+                {t.footer.description}
               </p>
             </div>
           </div>
@@ -42,14 +44,14 @@ export function SiteFooter() {
           {/* Navigate */}
           <div>
             <p className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-white/35">
-              Navigate
+              {t.footer.navigate}
             </p>
             <div className="mt-5 flex flex-col gap-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[0.94rem] text-white/55 transition-colors hover:text-white"
+                  className="text-[0.94rem] text-white/55 transition-colors duration-200 hover:text-white"
                 >
                   {link.label}
                 </Link>
@@ -60,19 +62,19 @@ export function SiteFooter() {
           {/* Contact */}
           <div>
             <p className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-white/35">
-              Contact
+              {t.footer.contact}
             </p>
             <div className="mt-5 space-y-4">
               <a
                 href="tel:+19517370951"
-                className="flex items-center gap-3 text-[0.94rem] text-white/55 transition-colors hover:text-white"
+                className="flex items-center gap-3 text-[0.94rem] text-white/55 transition-colors duration-200 hover:text-white"
               >
                 <Phone className="size-4 shrink-0 text-white/30" />
                 +1 951-737-0951
               </a>
               <a
                 href="mailto:info@ivestorres.org"
-                className="flex items-center gap-3 text-[0.94rem] text-white/55 transition-colors hover:text-white"
+                className="flex items-center gap-3 text-[0.94rem] text-white/55 transition-colors duration-200 hover:text-white"
               >
                 <Mail className="size-4 shrink-0 text-white/30" />
                 info@ivestorres.org
@@ -83,18 +85,18 @@ export function SiteFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Padres Con Poder on Facebook"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/45 transition-colors hover:border-white/22 hover:text-white"
+                  className="transition-all duration-200 hover:scale-110 hover:opacity-90"
                 >
-                  <FacebookIcon className="size-4" />
+                  <FacebookGradientIcon className="h-9 w-9" />
                 </a>
                 <a
                   href="https://www.instagram.com/padres_con_poder"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Padres Con Poder on Instagram"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/45 transition-colors hover:border-white/22 hover:text-white"
+                  className="transition-all duration-200 hover:scale-110 hover:opacity-90"
                 >
-                  <InstagramIcon className="size-4" />
+                  <InstagramGradientIcon className="h-9 w-9" />
                 </a>
               </div>
             </div>
@@ -104,8 +106,8 @@ export function SiteFooter() {
         <Separator className="my-10 bg-white/8" />
 
         <div className="flex flex-col gap-2 text-[0.8rem] text-white/30 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Padres Con Poder. All rights reserved.</p>
-          <p>Trusted Inland Regional Center Vendor · California</p>
+          <p>{t.footer.rights}</p>
+          <p>{t.footer.vendor}</p>
         </div>
       </div>
     </footer>
