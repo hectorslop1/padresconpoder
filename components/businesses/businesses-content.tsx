@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BarChart3, BookUser, Briefcase, Rocket } from "lucide-react";
+import { ArrowRight, BarChart3, BookUser, Briefcase, Check, Rocket } from "lucide-react";
 
 import { useLanguage } from "@/contexts/language-context";
 import { Button } from "@/components/ui/button";
@@ -106,13 +106,39 @@ export function BusinessesContent() {
               <p className="text-[0.95rem] leading-7 text-ink-muted">{b.outcomes.body}</p>
             </MotionReveal>
             <MotionStagger className="grid grid-cols-2 gap-3">
-              {b.outcomes.items.map((item) => (
-                <MotionStaggerItem key={item}>
-                  <div className="rounded-xl border border-line/70 bg-white px-5 py-4 text-[0.9rem] font-medium text-ink shadow-ambient transition-all duration-200 hover:border-brand-primary/20 hover:shadow-ambient-lg">
-                    {item}
-                  </div>
-                </MotionStaggerItem>
-              ))}
+              {b.outcomes.items.map((item, i) => {
+                // Alternate between blue and green accent
+                const isGreen = i % 2 !== 0;
+                return (
+                  <MotionStaggerItem key={item}>
+                    <div
+                      className={`flex h-full items-center gap-3.5 rounded-2xl border p-5 shadow-ambient transition-all duration-200 hover:-translate-y-0.5 hover:shadow-ambient-lg ${
+                        isGreen
+                          ? "border-brand-secondary/25 bg-gradient-to-br from-brand-secondary-soft/60 to-white"
+                          : "border-brand-primary/15 bg-gradient-to-br from-brand-primary-soft/40 to-white"
+                      }`}
+                    >
+                      {/* Check circle */}
+                      <div
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
+                          isGreen
+                            ? "bg-brand-secondary/25 ring-1 ring-brand-secondary/30"
+                            : "bg-brand-primary-soft ring-1 ring-brand-primary/20"
+                        }`}
+                      >
+                        <Check
+                          className={`size-[0.9rem] ${isGreen ? "text-[#006d40]" : "text-brand-primary-strong"}`}
+                          strokeWidth={2.8}
+                        />
+                      </div>
+                      {/* Label */}
+                      <span className="text-[0.88rem] font-semibold leading-snug text-ink">
+                        {item}
+                      </span>
+                    </div>
+                  </MotionStaggerItem>
+                );
+              })}
             </MotionStagger>
           </div>
         </div>
