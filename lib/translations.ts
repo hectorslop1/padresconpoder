@@ -241,6 +241,7 @@ const en = {
     approach: {
       eyebrow: "Our Approach",
       headline: "A clear, supportive framework for complex decisions.",
+      stepLabel: "Step",
       steps: [
         {
           step: "01",
@@ -595,6 +596,7 @@ const es: typeof en = {
     approach: {
       eyebrow: "Nuestro Enfoque",
       headline: "Un marco claro y de apoyo para decisiones complejas.",
+      stepLabel: "Paso",
       steps: [
         {
           step: "01",

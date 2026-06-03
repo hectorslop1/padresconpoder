@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Eye, MapPin, ShieldCheck, Target, Users } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, Compass, Eye, HandHeart, MapPin, ShieldCheck, Target, Users } from "lucide-react";
 
 import { useLanguage } from "@/contexts/language-context";
 import { Button } from "@/components/ui/button";
@@ -87,15 +87,80 @@ export function AboutContent() {
             <h2 className="mt-3 max-w-xl text-[2rem] font-semibold leading-[1.08] tracking-[-0.03em] text-ink md:text-[2.5rem]">{a.approach.headline}</h2>
           </MotionReveal>
           <MotionStagger className="grid gap-5 md:grid-cols-3">
-            {a.approach.steps.map(({ step, title, detail }) => (
-              <MotionStaggerItem key={step}>
-                <div className="flex flex-col gap-5 rounded-[1.25rem] border border-line/70 bg-white p-7 shadow-ambient transition-all duration-200 hover:-translate-y-0.5 hover:shadow-ambient-lg md:p-8">
-                  <span className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-brand-primary">Step {step}</span>
-                  <h3 className="text-[1.5rem] font-semibold tracking-[-0.02em] text-ink">{title}</h3>
-                  <p className="text-[0.9rem] leading-7 text-ink-muted">{detail}</p>
-                </div>
-              </MotionStaggerItem>
-            ))}
+            {a.approach.steps.map(({ step, title, detail }, i) => {
+              const configs = [
+                {
+                  icon: Compass,
+                  gradient: "from-brand-primary-soft/55 to-white",
+                  border: "border-brand-primary/20",
+                  iconBg: "bg-brand-primary-soft",
+                  iconRing: "ring-brand-primary/20",
+                  iconColor: "text-brand-primary-strong",
+                  stepColor: "text-brand-primary-strong",
+                  numColor: "text-brand-primary-strong/[0.07]",
+                },
+                {
+                  icon: BookOpen,
+                  gradient: "from-[#f0edff]/70 to-white",
+                  border: "border-[#7c3aed]/15",
+                  iconBg: "bg-[#f0edff]",
+                  iconRing: "ring-[#7c3aed]/15",
+                  iconColor: "text-[#7c3aed]",
+                  stepColor: "text-[#7c3aed]",
+                  numColor: "text-[#7c3aed]/[0.07]",
+                },
+                {
+                  icon: HandHeart,
+                  gradient: "from-brand-secondary-soft/70 to-white",
+                  border: "border-brand-secondary/25",
+                  iconBg: "bg-brand-secondary-soft",
+                  iconRing: "ring-brand-secondary/20",
+                  iconColor: "text-[#006d40]",
+                  stepColor: "text-[#006d40]",
+                  numColor: "text-[#006d40]/[0.07]",
+                },
+              ];
+              const cfg = configs[i];
+              const Icon = cfg.icon;
+
+              return (
+                <MotionStaggerItem key={step}>
+                  <div
+                    className={`relative flex h-full flex-col overflow-hidden rounded-[1.25rem] border bg-gradient-to-br p-7 shadow-ambient transition-all duration-200 hover:-translate-y-1 hover:shadow-ambient-lg md:p-8 ${cfg.gradient} ${cfg.border}`}
+                  >
+                    {/* Ghost large step number — decorative */}
+                    <span
+                      className={`pointer-events-none absolute -right-3 -top-5 select-none text-[7rem] font-bold leading-none ${cfg.numColor}`}
+                      aria-hidden="true"
+                    >
+                      {step}
+                    </span>
+
+                    {/* Icon + step badge row */}
+                    <div className="relative mb-6 flex items-center justify-between">
+                      <div
+                        className={`flex h-12 w-12 items-center justify-center rounded-xl ring-1 ${cfg.iconBg} ${cfg.iconRing}`}
+                      >
+                        <Icon className={`size-5 ${cfg.iconColor}`} />
+                      </div>
+                      <span
+                        className={`text-[0.68rem] font-semibold uppercase tracking-[0.2em] ${cfg.stepColor}`}
+                      >
+                        {a.approach.stepLabel} {step}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="relative text-[1.4rem] font-semibold tracking-[-0.02em] text-ink">
+                      {title}
+                    </h3>
+                    <p className="relative mt-3 flex-1 text-[0.9rem] leading-7 text-ink-muted">
+                      {detail}
+                    </p>
+                  </div>
+                </MotionStaggerItem>
+              );
+            })}
           </MotionStagger>
         </div>
       </section>
