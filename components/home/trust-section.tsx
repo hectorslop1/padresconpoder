@@ -27,7 +27,7 @@ export function TrustSection() {
           {tr.pillars.map(({ label, detail }, i) => {
             const Icon = icons[i];
             return (
-              <MotionStaggerItem key={label}>
+              <MotionStaggerItem key={i}>
                 <div className="flex h-full flex-col gap-5 bg-white p-7 transition-colors duration-200 hover:bg-brand-primary-soft/10 md:p-8">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-primary-soft transition-colors duration-200">
                     <Icon className="size-5 text-brand-primary-strong" />

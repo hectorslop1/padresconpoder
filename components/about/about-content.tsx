@@ -176,7 +176,7 @@ export function AboutContent() {
             {a.why.items.map(({ title, detail }, i) => {
               const Icon = whyIcons[i];
               return (
-                <MotionStaggerItem key={title}>
+                <MotionStaggerItem key={i}>
                   <div className="flex gap-5 rounded-[1.25rem] border border-line/70 bg-white p-7 shadow-ambient transition-all duration-200 hover:-translate-y-0.5 hover:shadow-ambient-lg md:p-8">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-primary-soft">
                       <Icon className="size-5 text-brand-primary-strong" />
@@ -207,8 +207,8 @@ export function AboutContent() {
             </MotionReveal>
             <MotionReveal direction="right">
               <ul className="space-y-3">
-                {a.irc.bullets.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-[0.95rem] text-white/75">
+                {a.irc.bullets.map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-[0.95rem] text-white/75">
                     <CheckCircle2 className="size-4 shrink-0 text-brand-secondary" />
                     {item}
                   </li>

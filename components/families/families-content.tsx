@@ -78,7 +78,7 @@ export function FamiliesContent() {
               const Icon = icons[i];
               const tone = tones[i];
               return (
-                <MotionStaggerItem key={svc.title}>
+                <MotionStaggerItem key={i}>
                   <div className="flex h-full flex-col rounded-[1.25rem] border border-line/70 bg-white p-7 shadow-ambient transition-all duration-200 hover:-translate-y-0.5 hover:shadow-ambient-lg md:p-8">
                     <div className={`mb-6 flex h-12 w-12 items-center justify-center rounded-xl ${tone === "primary" ? "bg-brand-primary-soft" : "bg-brand-secondary-soft"}`}>
                       <Icon className={`size-5 ${tone === "primary" ? "text-brand-primary-strong" : "text-[#006d40]"}`} />
@@ -86,8 +86,8 @@ export function FamiliesContent() {
                     <h3 className="mb-3 text-[1.15rem] font-semibold leading-snug tracking-[-0.01em] text-ink">{svc.title}</h3>
                     <p className="mb-5 text-[0.9rem] leading-7 text-ink-muted">{svc.description}</p>
                     <ul className="mt-auto space-y-2.5">
-                      {svc.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2.5 text-[0.85rem] text-ink-muted">
+                      {svc.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2.5 text-[0.85rem] text-ink-muted">
                           <span className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full ${tone === "primary" ? "bg-brand-primary" : "bg-brand-secondary"}`} />
                           {b}
                         </li>
