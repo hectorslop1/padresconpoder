@@ -46,6 +46,7 @@ export function AudienceSection() {
           <h2 className="mt-3 max-w-xl text-[2rem] font-semibold leading-[1.08] tracking-[-0.03em] text-ink md:text-[2.5rem]">
             {a.headline}
           </h2>
+          <p className="mt-4 max-w-xl text-[1rem] leading-7 text-ink-muted">{a.subhead}</p>
         </MotionReveal>
 
         <MotionStagger className="grid gap-5 md:grid-cols-2">

@@ -27,6 +27,7 @@ function LanguageToggle() {
           key={l}
           type="button"
           onClick={() => setLang(l)}
+          aria-pressed={lang === l}
           className={`rounded-full px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] transition-all duration-200 ${
             lang === l
               ? "bg-brand-primary-strong text-white shadow-sm"
@@ -49,6 +50,7 @@ export function SiteHeader() {
     { label: t.nav.families, href: "/families" },
     { label: t.nav.businesses, href: "/businesses" },
     { label: t.nav.about, href: "/about" },
+    { label: t.nav.resources, href: "/resources" },
   ];
 
   return (
@@ -103,7 +105,7 @@ export function SiteHeader() {
         <div className="hidden items-center gap-3 lg:flex">
           <LanguageToggle />
           <Button asChild size="sm" className="rounded-full px-5 shadow-ambient transition-all duration-200 hover:-translate-y-0.5 hover:shadow-ambient-lg active:translate-y-0 active:scale-[0.98]">
-            <Link href="/get-support">{t.nav.getSupport}</Link>
+            <Link href="/contact">{t.nav.contact}</Link>
           </Button>
         </div>
 
@@ -115,7 +117,7 @@ export function SiteHeader() {
               <button
                 type="button"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-brand-primary-strong shadow-ambient transition-all duration-200 hover:bg-brand-primary-soft/40 active:scale-95"
-                aria-label="Open navigation"
+                aria-label={t.actions.openMenu}
               >
                 <Menu className="size-[1.1rem]" />
               </button>
@@ -123,7 +125,7 @@ export function SiteHeader() {
             <SheetContent side="right" className="w-80" aria-describedby={undefined}>
               <SheetHeader className="pb-2">
                 <SheetTitle className="text-left text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-ink-muted">
-                  Navigate
+                  {t.footer.navigate}
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-1">
@@ -147,8 +149,8 @@ export function SiteHeader() {
               </div>
               <div className="mt-6">
                 <Button asChild className="w-full rounded-full shadow-ambient">
-                  <Link href="/get-support" onClick={() => setOpen(false)}>
-                    {t.nav.getSupport}
+                  <Link href="/contact" onClick={() => setOpen(false)}>
+                    {t.nav.contact}
                   </Link>
                 </Button>
               </div>

@@ -7,6 +7,7 @@ import { useLanguage } from "@/contexts/language-context";
 import { Button } from "@/components/ui/button";
 import { FacebookGradientIcon, InstagramGradientIcon } from "@/components/ui/social-icons";
 import { MotionReveal, MotionStagger, MotionStaggerItem } from "@/components/home/motion";
+import { siteContact } from "@/lib/site";
 
 export function ContactCtaSection() {
   const { t } = useLanguage();
@@ -32,7 +33,7 @@ export function ContactCtaSection() {
               size="lg"
               className="rounded-full shadow-ambient-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_-20px_rgba(30,84,174,0.5)] active:translate-y-0 active:scale-[0.98]"
             >
-              <Link href="/get-support">
+              <Link href="/contact">
                 {c.cta}
                 <ArrowRight className="ml-2 size-4" />
               </Link>
@@ -43,7 +44,24 @@ export function ContactCtaSection() {
           <MotionStagger className="space-y-4">
             <MotionStaggerItem>
               <a
-                href="tel:+19517370951"
+                href={siteContact.emailHref}
+                className="group flex items-center gap-4 rounded-2xl border border-line/70 bg-white px-6 py-5 shadow-ambient transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-primary/25 hover:shadow-ambient-lg"
+              >
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-primary-soft transition-colors duration-200 group-hover:bg-brand-primary-soft/80">
+                  <Mail className="size-5 text-brand-primary-strong" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-ink-muted">
+                    {c.email}
+                  </p>
+                  <p className="mt-0.5 truncate font-semibold text-ink">{siteContact.email}</p>
+                </div>
+              </a>
+            </MotionStaggerItem>
+
+            <MotionStaggerItem>
+              <a
+                href={siteContact.phoneHref}
                 className="group flex items-center gap-4 rounded-2xl border border-line/70 bg-white px-6 py-5 shadow-ambient transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-primary/25 hover:shadow-ambient-lg"
               >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-primary-soft transition-colors duration-200 group-hover:bg-brand-primary-soft/80">
@@ -53,57 +71,45 @@ export function ContactCtaSection() {
                   <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-ink-muted">
                     {c.phone}
                   </p>
-                  <p className="mt-0.5 font-semibold text-ink">+1 951-737-0951</p>
+                  <p className="mt-0.5 font-semibold text-ink">{siteContact.phone}</p>
                 </div>
               </a>
             </MotionStaggerItem>
 
             <MotionStaggerItem>
-              <a
-                href="mailto:info@ivestorres.org"
-                className="group flex items-center gap-4 rounded-2xl border border-line/70 bg-white px-6 py-5 shadow-ambient transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-primary/25 hover:shadow-ambient-lg"
-              >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-primary-soft transition-colors duration-200 group-hover:bg-brand-primary-soft/80">
-                  <Mail className="size-5 text-brand-primary-strong" />
-                </div>
-                <div>
-                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-ink-muted">
-                    {c.email}
-                  </p>
-                  <p className="mt-0.5 font-semibold text-ink">info@ivestorres.org</p>
-                </div>
-              </a>
-            </MotionStaggerItem>
-
-            <MotionStaggerItem>
-              <div className="flex items-center gap-3">
+              {/* Side by side these two cards cannot fit a phone, so they stack. */}
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
-                  href="https://www.facebook.com/capacitate365"
+                  href={siteContact.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex flex-1 items-center gap-4 rounded-2xl border border-line/70 bg-white px-6 py-5 shadow-ambient transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1877F2]/25 hover:shadow-ambient-lg"
                 >
                   <FacebookGradientIcon className="h-11 w-11 shrink-0" />
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-ink-muted">
                       {c.facebook}
                     </p>
-                    <p className="mt-0.5 text-sm font-semibold text-ink">capacitate365</p>
+                    <p className="mt-0.5 truncate text-sm font-semibold text-ink">
+                      {siteContact.facebookHandle}
+                    </p>
                   </div>
                 </a>
 
                 <a
-                  href="https://www.instagram.com/padres_con_poder"
+                  href={siteContact.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex flex-1 items-center gap-4 rounded-2xl border border-line/70 bg-white px-6 py-5 shadow-ambient transition-all duration-200 hover:-translate-y-0.5 hover:border-[#E1306C]/20 hover:shadow-ambient-lg"
                 >
                   <InstagramGradientIcon className="h-11 w-11 shrink-0" />
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-ink-muted">
                       {c.instagram}
                     </p>
-                    <p className="mt-0.5 text-sm font-semibold text-ink">@padres_con_poder</p>
+                    <p className="mt-0.5 truncate text-sm font-semibold text-ink">
+                      {siteContact.instagramHandle}
+                    </p>
                   </div>
                 </a>
               </div>

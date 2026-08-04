@@ -47,24 +47,31 @@ export function HeroSection() {
 
           <p className="max-w-lg text-lg leading-8 text-ink-muted">{h.body}</p>
 
-          <div className="flex flex-wrap gap-3">
+          {/* The two paths. These are the primary decision on the whole site, so
+              they get full-width targets rather than a row of small buttons.
+              `whitespace-normal` overrides the button default: these labels are
+              full sentences and must wrap on a phone. */}
+          <div className="flex min-w-0 flex-col gap-3 sm:max-w-lg">
             <Button
               asChild
               size="lg"
-              className="rounded-full shadow-ambient-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_-20px_rgba(30,84,174,0.5)] active:translate-y-0 active:scale-[0.98]"
+              className="group h-auto justify-between whitespace-normal rounded-2xl px-6 py-4 text-left text-[0.98rem] shadow-ambient-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_-20px_rgba(30,84,174,0.5)] active:translate-y-0 active:scale-[0.99]"
             >
               <Link href="/families">
                 {h.ctaFamilies}
-                <ArrowRight className="ml-2 size-4 transition-transform duration-200 group-hover:translate-x-1" />
+                <ArrowRight className="ml-3 size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </Button>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="rounded-full transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-primary-soft/50 active:translate-y-0 active:scale-[0.98]"
+              className="group h-auto justify-between whitespace-normal rounded-2xl border-brand-primary/30 px-6 py-4 text-left text-[0.98rem] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-primary-soft/50 active:translate-y-0 active:scale-[0.99]"
             >
-              <Link href="/businesses">{h.ctaBusinesses}</Link>
+              <Link href="/businesses">
+                {h.ctaBusinesses}
+                <ArrowRight className="ml-3 size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
+              </Link>
             </Button>
           </div>
         </motion.div>

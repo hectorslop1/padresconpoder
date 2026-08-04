@@ -1,12 +1,16 @@
-import type { Metadata } from "next";
-import { BusinessesContent } from "@/components/businesses/businesses-content";
+import { PathIndex } from "@/components/paths/path-index";
+import { localizedMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Inclusive Business Consulting | Padres Con Poder",
-  description:
-    "Padres Con Poder helps California businesses build inclusive, neurodiverse-friendly workplaces through coaching, training, and DEI strategy.",
-};
+export async function generateMetadata() {
+  return localizedMetadata((t) => t.businesses.meta);
+}
 
 export default function BusinessesPage() {
-  return <BusinessesContent />;
+  return (
+    <PathIndex
+      pathKey="businesses"
+      image="/images/2.jpg.webp"
+      imageAlt="Padres Con Poder team members collaborating at an event"
+    />
+  );
 }

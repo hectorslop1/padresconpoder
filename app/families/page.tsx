@@ -1,12 +1,16 @@
-import type { Metadata } from "next";
-import { FamiliesContent } from "@/components/families/families-content";
+import { PathIndex } from "@/components/paths/path-index";
+import { localizedMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Support for Families | Padres Con Poder",
-  description:
-    "Padres Con Poder helps individuals with disabilities and their families navigate the Self-Determination Program with confidence — from service planning to ongoing advocacy.",
-};
+export async function generateMetadata() {
+  return localizedMetadata((t) => t.families.meta);
+}
 
 export default function FamiliesPage() {
-  return <FamiliesContent />;
+  return (
+    <PathIndex
+      pathKey="families"
+      image="/images/3.jpg.webp"
+      imageAlt="Families supported by Padres Con Poder at a community gathering"
+    />
+  );
 }
