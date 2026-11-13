@@ -11,14 +11,13 @@ import {
   MapPin,
   ShieldCheck,
   Target,
-  UserRound,
   Users,
 } from "lucide-react";
 
 import { useLanguage } from "@/contexts/language-context";
 import { Button } from "@/components/ui/button";
 import { MotionReveal, MotionStagger, MotionStaggerItem } from "@/components/home/motion";
-import { teamMembers } from "@/lib/site";
+import { TeamProfiles } from "@/components/about/team-profiles";
 
 const whyIcons = [Users, Languages, HandHeart, MapPin];
 
@@ -63,34 +62,14 @@ export function AboutContent() {
             </h2>
           </MotionReveal>
 
-          <MotionStagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {teamMembers.map((member) => (
-              <MotionStaggerItem key={member.name}>
-                <div className="flex h-full flex-col gap-4 rounded-[1.25rem] border border-line/70 bg-white p-6 shadow-ambient transition-all duration-200 hover:-translate-y-0.5 hover:shadow-ambient-lg md:p-7">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-primary-soft">
-                    <UserRound className="size-6 text-brand-primary-strong" />
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="text-[1.1rem] font-semibold leading-snug tracking-[-0.01em] text-ink">
-                      {member.name}
-                    </h3>
-                    <p className="text-[0.85rem] font-medium text-brand-primary-strong">
-                      {a.team.roles[member.roleKey]}
-                    </p>
-                  </div>
-                </div>
-              </MotionStaggerItem>
-            ))}
+          <TeamProfiles />
 
-            <MotionStaggerItem>
-              <div className="flex h-full flex-col justify-center gap-2 rounded-[1.25rem] border border-dashed border-brand-primary/30 bg-brand-primary-soft/25 p-6 md:p-7">
-                <p className="text-[0.98rem] font-semibold leading-snug text-brand-primary-strong">
-                  {a.team.others}
-                </p>
-                <p className="text-[0.85rem] leading-6 text-ink-muted">{a.team.othersDetail}</p>
-              </div>
-            </MotionStaggerItem>
-          </MotionStagger>
+          <div className="mt-6 flex flex-col gap-2 rounded-[1.25rem] border border-dashed border-brand-primary/30 bg-brand-primary-soft/25 p-6 md:flex-row md:items-center md:justify-between md:p-7">
+            <p className="text-[0.98rem] font-semibold leading-snug text-brand-primary-strong">
+              {a.team.others}
+            </p>
+            <p className="text-[0.85rem] leading-6 text-ink-muted">{a.team.othersDetail}</p>
+          </div>
         </div>
       </section>
 

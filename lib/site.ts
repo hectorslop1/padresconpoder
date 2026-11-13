@@ -35,9 +35,13 @@ export const featureFlags = {
   showIvesTorresResources: false,
 } as const;
 
-/** The three named facilitators listed in sections 5.1 and 5.3 of the plan. */
+/**
+ * The three named facilitators listed in sections 5.1 and 5.3 of the plan.
+ * Members with a `bioKey` also have a long-form biography on the About page,
+ * rendered from `lib/i18n/about.ts` so it stays available in both languages.
+ */
 export const teamMembers = [
-  { name: "Javier Torres", roleKey: "president" },
-  { name: "Isabel Torres", roleKey: "facilitator" },
+  { name: "Javier Torres", roleKey: "president", photo: "/team/javier-torres.jpg", bioKey: "javier" },
+  { name: "Isabel Torres", roleKey: "facilitator", photo: "/team/isabel-torres.jpg", bioKey: "isabel" },
   { name: "Araceli Gil", roleKey: "facilitator" },
 ] as const;
